@@ -1,0 +1,302 @@
+/* Theme: ink-blue courtroom in Union Jack colors -- navy ink, clean white ground, a restrained
+   flag-red accent (the red tape a brief is tied up with), not literal flag stripes. */
+:root {
+  color-scheme: light dark;
+  --max-width: 42rem;
+  --fg: #15223a;           /* navy ink */
+  --muted: #5a6578;        /* blue-grey */
+  --bg: #f7f8fa;           /* clean white */
+  --bg-raised: #eef1f6;
+  --rule: #d4dae4;
+  --accent: #0d2c6b;       /* Union Jack navy */
+  --accent-2: #c8102e;     /* Union Jack red / red tape */
+  --shadow: rgba(13, 24, 48, 0.08);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8ecf3;
+    --muted: #8b96ab;
+    --bg: #0b1220;         /* navy night */
+    --bg-raised: #151f33;
+    --rule: #2a3651;
+    --accent: #89aee6;
+    --accent-2: #f4707f;
+    --shadow: rgba(0, 0, 0, 0.35);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.65;
+  margin: 0;
+  padding: 2.5rem 1rem 4rem;
+}
+
+nav, header, article, ul.episode-list, section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+nav {
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.02em;
+}
+
+nav a, .episode-list a, footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+nav a:hover, .episode-list a:hover, footer a:hover {
+  text-decoration: underline;
+}
+
+/* site header: a ruled letterhead, navy-over-red, like a brief's backsheet */
+body > header {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 3px double var(--rule);
+  text-align: center;
+}
+
+body > header h1 {
+  font-size: 1.9rem;
+  letter-spacing: 0.03em;
+  margin: 0 0 0.35rem;
+}
+
+body > header .series {
+  margin: 0;
+}
+
+.series {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+
+/* episode article header: a thin navy rule under the title, like counsel's
+   name underlined on a pleading */
+article > header {
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+article p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+article p:first-of-type::first-letter {
+  float: left;
+  font-size: 3rem;
+  line-height: 0.85;
+  padding: 0.05em 0.1em 0 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 2.5rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+footer .note {
+  font-style: italic;
+}
+
+footer .source {
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  opacity: 0.8;
+}
+
+/* season sections on the index page -- a navy rule under each heading, like a chapter
+   divider in a bound volume; the date range sits beside it, not competing for emphasis */
+section {
+  margin: 2rem auto 0;
+}
+
+section h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 0.3rem;
+  margin: 0 0 0.5rem;
+}
+
+section h2 .when {
+  float: right;
+  color: var(--muted);
+  font-style: italic;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
+/* episode list: styled like a court cause list -- a code "docket" tag
+   followed by the case title */
+.episode-list {
+  list-style: none;
+  padding: 0;
+}
+
+.episode-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
+}
+
+.episode-list .code {
+  flex: 0 0 auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--accent-2);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.15em 0.5em;
+  box-shadow: 0 1px 2px var(--shadow);
+}
+
+.episode-list li > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.episode-list .teaser {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-style: italic;
+}
+
+/* per-page nav and the blurb teaser under an episode's own title */
+nav {
+  font-size: 0.9rem;
+}
+
+.blurb {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 1.25rem;
+}
+
+/* Oxford Book of English Verse section (site/obev/) -- this was shipped with no CSS at all for
+   any of these classes, so every poem rendered as one unstyled run-together wall of text (the
+   per-line <span class="vl"> markup needs display:block to actually break lines; nothing else
+   in the sitewide CSS touched any of these class names). Fixed here in one pass. */
+article.obev-about {
+  max-width: var(--max-width);
+  margin: 0 auto 2rem;
+}
+
+h2 {
+  font-size: 1.15rem;
+  font-weight: normal;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 0.3rem;
+  margin: 2rem auto 0.75rem;
+  max-width: var(--max-width);
+}
+
+/* poet index (site/obev/index.html): a contents list, code-tag style like the episode list */
+.poet-list {
+  list-style: none;
+  padding: 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  columns: 2 16rem;
+}
+
+.poet-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.25rem 0;
+  break-inside: avoid;
+}
+
+.poet-list .poem-range {
+  flex: 0 0 auto;
+  font-family: "Courier New", monospace;
+  font-size: 0.72rem;
+  color: var(--accent-2);
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 0.1em 0.4em;
+  white-space: nowrap;
+}
+
+/* one poet's page (site/obev/<poet>/index.html) */
+article.poet {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.poet-dates {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-left: 0.5em;
+}
+
+article.poem {
+  margin: 0 0 2.2rem;
+}
+
+article.poem h3 {
+  font-weight: normal;
+  font-size: 1.05rem;
+  margin: 0 0 0.6rem;
+  letter-spacing: 0.01em;
+}
+
+.poem-no {
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.82rem;
+  margin-right: 0.4em;
+}
+
+.poem-title {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.stanza {
+  margin: 0 0 1rem;
+}
+
+/* each verse line is its own <span> with an inline per-line indent (style="margin-left:Nem")
+   already baked in by the build script -- this is the one rule that actually makes it a poem
+   instead of one run-on paragraph */
+.vl {
+  display: block;
+  line-height: 1.55;
+}
