@@ -204,6 +204,13 @@ nav {
   margin: 0 0 1.25rem;
 }
 
+.broadcast {
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  color: var(--accent-2);
+  margin: 0 0 1rem;
+}
+
 /* Oxford Book of English Verse section (site/obev/) -- this was shipped with no CSS at all for
    any of these classes, so every poem rendered as one unstyled run-together wall of text (the
    per-line <span class="vl"> markup needs display:block to actually break lines; nothing else
@@ -299,4 +306,39 @@ article.poem h3 {
 .vl {
   display: block;
   line-height: 1.55;
+}
+
+/* a poem's own date/collection-source line (e.g. "c. 1300", "Tottel's Miscellany, 1557") */
+.poem-subtitle {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.85rem;
+  margin: 0 0 0.6rem;
+}
+
+/* an inline part/section label mid-poem (e.g. "PART I", a roundel's "1. CAPTIVITY", or an
+   In Memoriam section's bare roman numeral) -- set apart like a small running head */
+.poem-part-label {
+  font-weight: bold;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  color: var(--accent-2);
+  margin: 1rem 0 0.4rem;
+}
+
+/* Coleridge's "[Sidenote: ...]" marginal gloss in "The Rime of the Ancient Mariner" */
+.poem-sidenote {
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.82rem;
+  margin: 0.6rem 0;
+  padding-left: 0.75rem;
+  border-left: 2px solid var(--rule);
+}
+
+/* a poem's own archaic-word glosses, gathered as one footnote line beneath its stanzas */
+.poem-glosses {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin: 0.6rem 0 0;
 }
