@@ -365,3 +365,78 @@ article.poem h3 {
   font-size: 0.78rem;
   margin: 0.6rem 0 0;
 }
+
+/* characters.html: one card per recurring main-cast role, styled like a brief's own witness
+   list rather than the episode cause-list (no code tag -- a character isn't a docket number) */
+.character-list {
+  list-style: none;
+  padding: 0;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.character-card {
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.character-card h2 {
+  margin: 0 0 0.2rem;
+  max-width: none;
+  border-bottom: none;
+  padding-bottom: 0;
+  font-size: 1.15rem;
+}
+
+.character-role {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 0.6rem;
+  font-size: 0.92rem;
+}
+
+.character-actor, .character-first {
+  margin: 0.4rem 0;
+  font-size: 0.95rem;
+}
+
+.character-actor strong, .character-first strong {
+  color: var(--accent);
+  font-weight: normal;
+  font-style: italic;
+}
+
+.character-actor ul, .character-first ul {
+  margin: 0.3rem 0 0.3rem 1.2rem;
+  padding: 0;
+}
+
+.character-actor li, .character-first li {
+  margin: 0.3rem 0;
+}
+
+/* books.html: the bibliography's own tables, styled like a cause list's ruled columns */
+article.books table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0.75rem 0 1.5rem;
+  font-size: 0.92rem;
+}
+
+article.books th, article.books td {
+  text-align: left;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+article.books th {
+  color: var(--accent);
+  font-weight: normal;
+  font-style: italic;
+  border-bottom: 2px solid var(--accent);
+}
+
+article.books section {
+  margin: 1.75rem auto 0;
+}
