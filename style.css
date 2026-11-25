@@ -487,3 +487,103 @@ article.books section {
   color: var(--muted);
   font-weight: normal;
 }
+
+/* The 404 page: a courtroom docket with red tape */
+.notfound {
+  max-width: var(--max-width);
+  margin: 2.5rem auto 3rem;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.notfound .docket {
+  margin: 0;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.notfound .big404 {
+  margin: 0.2rem 0 0;
+  font-size: clamp(5rem, 22vw, 9rem);
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  text-shadow: 3px 3px 0 var(--shadow);
+}
+
+.notfound h1 {
+  margin: 0.2rem 0 1rem;
+  font-size: 1.7rem;
+}
+
+.notfound .tape {
+  height: 0.7rem;
+  margin: 0 auto 1.5rem;
+  border-radius: 2px;
+  background: repeating-linear-gradient(135deg, var(--accent-2) 0 14px, transparent 14px 22px);
+  opacity: 0.85;
+}
+
+.notfound .ruling {
+  max-width: 34rem;
+  margin: 0 auto 2rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.notfound h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.notfound .doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.8rem;
+  margin: 0 0 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.notfound .doors a {
+  display: block;
+  height: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent-2);
+  border-radius: 4px;
+  background: var(--bg-raised);
+  text-decoration: none;
+  text-align: left;
+  box-shadow: 0 2px 6px var(--shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.notfound .doors a:hover,
+.notfound .doors a:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px var(--shadow);
+}
+
+.notfound .doors strong {
+  display: block;
+  color: var(--accent);
+}
+
+.notfound .doors span {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.notfound .sign-off {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
