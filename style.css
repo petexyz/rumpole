@@ -440,3 +440,50 @@ article.books th {
 article.books section {
   margin: 1.75rem auto 0;
 }
+
+/* Credits block at the foot of each episode page */
+.credits {
+  margin-top: 2rem;
+  border-top: 1px solid var(--rule);
+  padding-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.credits h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.6rem;
+  color: var(--accent);
+}
+
+.credits dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.2rem 1rem;
+  margin: 0 0 1rem;
+}
+
+.credits dt {
+  color: var(--muted);
+}
+
+.credits dd {
+  margin: 0;
+}
+
+.credits .cast {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.credits .cast th,
+.credits .cast td {
+  text-align: left;
+  padding: 0.25rem 0.6rem 0.25rem 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.credits .cast th {
+  color: var(--muted);
+  font-weight: normal;
+}
